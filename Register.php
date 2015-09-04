@@ -39,7 +39,7 @@ class Register extends Form
         'showError'         => false,
         'errorMsg'          => 'Please enter a valid email address',
         'showUniqueError'   => false,
-        'uniqueErrorMsg'    => 'Your email address has already been registered on AG',
+        'uniqueErrorMsg'    => 'Your email address has already been registered',
         'tooltip'           => 'Please enter a valid email address'
       ),
       'repeat_email' => array(
