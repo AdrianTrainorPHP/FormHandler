@@ -1,9 +1,25 @@
 <?php
+
+/**
+ * Class CustomPDO
+ */
 class CustomPDO
 {
+  /**
+   * @var bool
+   */
   private $debug;
+  /**
+   * @var PDO
+   */
   private $pdo;
 
+  /**
+   * @param $dbDSN
+   * @param $dbUsername
+   * @param $dbPassword
+   * @param bool $debug
+   */
   public function __construct($dbDSN, $dbUsername, $dbPassword, $debug = false)
   {
     $this->debug = $debug;
@@ -14,6 +30,10 @@ class CustomPDO
     }
   }
 
+  /**
+   * @param string $sql
+   * @return array|bool
+   */
   public function Query($sql = '')
   {
     $results = false;
@@ -32,6 +52,10 @@ class CustomPDO
     return $results;
   }
 
+  /**
+   * @param string $sql
+   * @return bool|string
+   */
   public function create($sql = '')
   {
     if (strlen($sql) > 0) {
@@ -43,6 +67,9 @@ class CustomPDO
     return false;
   }
 
+  /**
+   * @param PDOException $exception
+   */
   public function throwException(PDOException $exception)
   {
     if ($this->debug) {
